@@ -32,9 +32,9 @@ def merge_sort(items):
 def quick_sort(items, low=None, high=None):
     """Sort given items in place by partitioning items in range `[low...high]`
     around a pivot item and recursively sorting each remaining sublist range.
-    TODO: Best/Average case running time: O(nlogn) 
+    Best/Average case running time: O(nlogn) 
     Worst case running time: O(n^2) If the list is already sorted, I set pivot to high, and force every element below it, and it continues until every element has become a pivot, not counting index 0
-    TODO: Memory usage: ??? Why and under what conditions?"""
+    Memory usage: O(logn) creates new partitions logn times."""
     # Check if high and low range bounds have default values (not given)
     if low == None:
         low = 0
@@ -53,7 +53,7 @@ def quick_sort(items, low=None, high=None):
 
 def partition(items, low, high):
     """Return index `p` after in-place partitioning given items in range
-    `[low...high]` by choosing a pivot (TODO: document your method here) from
+    `[low...high]` by choosing a pivot (Pivot the high element) from
     that range, moving pivot into index `p`, items less than pivot into range
     `[low...p-1]`, and items greater than pivot into range `[p+1...high]`.
     Running time: O(n) n being the number of elements in the partitioned array.
